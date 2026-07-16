@@ -88,7 +88,6 @@ h1, h2, h3, h4, p, span {
 .tech-badge, .lang-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   background: rgba(0, 25, 45, 0.65); /* Matches original task-box transparency */
   color: #4eb9fc !important; /* Signature accent light-blue color */
   padding: 8px 16px;
@@ -310,7 +309,7 @@ footer {
 }
 
 /* ==========================================================================
-   6. NEW PROFILE BUTTONS & SVG ICONS (Transparent & Light Blue Accents)
+   6. PROFILE BUTTONS
    ========================================================================== */
 .profile-links {
   display: flex;
@@ -323,7 +322,6 @@ footer {
 .profile-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   padding: 8px 16px;
   border-radius: 8px;
   font-size: 14px;
@@ -346,13 +344,72 @@ footer {
   text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6); /* Glow shadow */
 }
 
-/* Clean SVG Icon sizing and active coloring */
-.link-icon {
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* ==========================================================================
+   7. RESPONSIVE MOBILE FIXES
+   ========================================================================== */
+@media (max-width: 768px) {
+  body {
+    padding: 15px; /* Tighter margins on body */
+  }
+
+  .portfolio-container {
+    padding: 20px; /* Bring the outer container margins inward */
+    border-radius: 16px;
+  }
+
+  .welcome-msg {
+    font-size: 24px; /* Dial down welcome message size */
+  }
+
+  #greeting {
+    font-size: 18px;
+  }
+
+  /* Stack profile picture over bio text */
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .profile-left {
+    width: 100%;
+  }
+
+  /* Center buttons under bio on mobile */
+  .profile-links {
+    justify-content: center;
+  }
+
+  /* Switch grid elements from 2-columns down to a single column list */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Certifications adapt list structure cleanly */
+  .cert-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .cert-vendor {
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .tech-grid {
+    justify-content: center; /* Center the technical badges neatly */
+  }
+
+  /* Constrain game previews so they stack elegantly */
+  .game-preview-img {
+    align-self: center;
+    max-width: 100%;
+    width: 100%;
+    height: 140px;
+  }
 }
